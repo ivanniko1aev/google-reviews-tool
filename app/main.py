@@ -3,9 +3,13 @@ from fastapi.responses import HTMLResponse
 from fastapi.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
 from starlette.requests import Request
+from starlette.middleware.sessions import SessionMiddleware
 from app.oauth import router as oauth_router
 
 app = FastAPI()
+
+# Add session middleware with a secret key
+app.add_middleware(SessionMiddleware, secret_key="your-secret-key")
 
 # Include the OAuth routes
 app.include_router(oauth_router)
@@ -20,12 +24,10 @@ app.mount("/static", StaticFiles(directory="app/static"), name="static")
 async def home(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
-# Route for fetching reviews (optional)
-@app.get("/reviews")
-async def reviews(access_token: str):
-    # Use the access token to fetch reviews
-    reviews_data = get_reviews(access_token)
-    return {"reviews": reviews_data}
+# Route to render the reviews page (reviews.html)
+@app.get("/reviews", response_class=HTMLResponse)
+async def reviews_page(request: Request):
+    return templates.TemplateResponse("reviews.html", {"request": request})
 
 
 
