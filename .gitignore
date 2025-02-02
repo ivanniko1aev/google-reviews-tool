@@ -1,4 +1,4 @@
 .env
 venv/
 client_secret_878287906343-asqv1ehu1sstl343nllg5kteum01kna1.apps.googleusercontent.com.json
-__pycache__
+app/__pycache__/
