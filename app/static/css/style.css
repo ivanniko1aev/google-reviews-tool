@@ -1,81 +1,91 @@
-/* Global Styles */
+/* 🌍 Global Styles */
 body {
     font-family: 'Inter', sans-serif;
-    background-color: #f4f4f4;
+    background-color: #f8f9fa;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
+/* 📦 Main Container */
 .container {
-    width: 90%;
-    max-width: 800px;
-    background: #ffffff;
+    background: white;
     padding: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    border-radius: 10px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    max-width: 700px;
+    width: 100%;
     text-align: center;
 }
 
-/* Reviews Section */
+/* 📝 Heading */
+h1, h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* 💬 Reviews Section */
 .reviews-box {
     background: #f9f9f9;
     padding: 15px;
     border-radius: 8px;
-    margin: 10px 0;
+    margin: 15px 0;
     text-align: left;
     max-height: 300px;
     overflow-y: auto;
+    border: 1px solid #ddd;
 }
 
-/* Individual Review Card */
+/* 💡 Review Card */
 .review-card {
-    background: #ffffff;
-    padding: 10px;
+    background: #fff;
+    padding: 12px;
     margin: 10px 0;
     border-radius: 6px;
-    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.review-card:hover {
+    transform: scale(1.02);
+    background: #e9ecef;
 }
 
 .review-card strong {
     font-weight: 600;
-    display: block;
-    margin-bottom: 5px;
+    color: #007BFF;
 }
 
-/* Customization Section */
+/* 🎨 Customization Section */
 .settings {
     background: #fff;
     padding: 15px;
     border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
     margin-top: 20px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
-.settings h3 {
-    margin-top: 0;
-}
-
+/* 🎯 Input Fields */
 input[type="color"], input[type="number"] {
     margin: 5px 0;
-    padding: 5px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    width: 100px;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 120px;
 }
 
-/* Button */
+/* 🔘 Button */
 button {
     background: #007BFF;
     color: white;
-    padding: 10px 15px;
+    padding: 10px 20px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    transition: 0.3s;
+    transition: background 0.3s ease;
     margin-top: 10px;
 }
 
@@ -83,20 +93,20 @@ button:hover {
     background: #0056b3;
 }
 
-/* Embed Code Box */
+/* 📋 Embed Code */
 textarea {
     width: 100%;
-    padding: 10px;
+    padding: 12px;
     margin-top: 10px;
     border-radius: 5px;
-    border: 1px solid #ddd;
+    border: 1px solid #ccc;
     background: #fafafa;
+    font-size: 14px;
 }
 
-/* Responsive Design */
+/* 📱 Responsive Design */
 @media (max-width: 600px) {
     .container {
-        width: 95%;
         padding: 15px;
     }
 
